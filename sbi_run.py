@@ -4,7 +4,7 @@ from sbi import utils as utils
 from sbi import analysis as analysis
 import torch
 # %matplotlib inline
-# %config InlineBackend.figure_format = 'retina'
+%config InlineBackend.figure_format = 'retina'
 import sys, os
 # sys.path.insert(0,os.path.realpath(os.path.join(os.getcwd(),'..')))
 from getdist import plots, MCSamples
