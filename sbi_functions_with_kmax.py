@@ -83,7 +83,7 @@ def corner_plot (real_params, all_cosmo_param_samples, plot_title, colors, line_
     names = param_names
     labels =  param_names
     all_samples = []  
-    for i in range (len(all_cosmo_param_samples)):
+    for i in range (len(all_cosmo_param_samples)): #i = number of diff posteriors 
         MCS_samples = MCSamples(samples=all_cosmo_param_samples[i],names = names, labels = labels, label = label[i])
         all_samples.append (MCS_samples)  ##array of samples of each posterior sample to be plotted
     
