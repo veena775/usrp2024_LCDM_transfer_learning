@@ -26,6 +26,29 @@ cosmo_paras = import_cosmo_params (file_path, num_folders)
 posterior_file_name = 'posterior_2000_0.1.pth'
 posterior = train(cosmo_params_file, posterior_file_name)
 """
+k_max = 0.1
+num_folders_lh = 2000
+file_path_lh = '../Data/Pk/matter/latin_hypercube/'
+file_name_lh = '/Pk_m_z=0.txt'
+Pk_lh= import_Pks(file_path_lh, file_name_lh, num_folders_lh, k_max)
+
+num_folders_BSQ = 30000
+file_path_BSQ = '../Data/Pk/matter/BSQ/'
+file_name_BSQ = '/Pk_CDM_z=0.000.dat'
+Pk_BSQ = import_Pks(file_path_BSQ, file_name_BSQ, num_folders_BSQ, k_max)
+
+Pk_data = torch.vstack((Pk_lh, Pk_BSQ))
+
+cosmo_params_file_lh = 'latin_hypercube_params.txt'
+cosmo_params_file_BSQ = 'BSQ_params.txt'
+cosmo_params_lh = import_cosmo_params (cosmo_params_file_lh, num_folders_lh)
+cosmo_params_BSQ = import_cosmo_params(cosmo_params_file_BSQ, num_folders_BSQ)
+
+cosmo_params = torch.vstack((cosmo_params_lh, cosmo_params_BSQ))
+
+
+posterior_file_name = 'posterior_32000_0.1.pth'
+posterior = train(cosmo_params, Pk_data, posterior_file_name)
 
 
 """
