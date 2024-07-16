@@ -10,11 +10,11 @@ import matplotlib.pyplot as plt
 import IPython
 
 
-def import_Pks (file_path, num_folders, k_max):
+def import_Pks (file_path, file_name, num_folders, k_max):
     Pk = []
     k = []
     for i in range(num_folders):
-        k_i, Pk_i = np.loadtxt(file_path+str(i)+'/Pk_m_z=0.txt', unpack=True)
+        k_i, Pk_i = np.loadtxt(file_path+str(i)+file_name, usecols=(0, 1), unpack=True)
         Pk_filtered = []
         for j in range (len(Pk_i)):
             if k_i[j] <= k_max:
@@ -22,33 +22,32 @@ def import_Pks (file_path, num_folders, k_max):
         Pk.append(Pk_filtered)   
     Pk = np.array(Pk)
     Pk = torch.tensor(Pk, dtype=torch.float32)
-    return Pk # returns array of Pk values for given k_max
+    return Pk ## returns array of Pks for given kmax
 
 
 def import_cosmo_params (file_path, num_folders):
     cosmo_params = np.loadtxt(file_path)
     cosmo_params = cosmo_params[:num_folders, :]
     cosmo_params = torch.tensor(cosmo_params, dtype=torch.float32)
-    return cosmo_params  ##array of all cosmo params for training 
+    return cosmo_params
 
 
 
-def train (cosmo_params, Pk, posterior_file_name):
-    
+def train (cosmo_params, Pk_data, posterior_file_name):
+   
     num_dim = cosmo_params.shape[1]  
     min_vals = torch.min(cosmo_params, dim=0).values
     max_vals = torch.max(cosmo_params, dim=0).values
     
     prior = utils.BoxUniform(low=min_vals, high=max_vals)
     inference = sbi.inference.SNPE(prior=prior)
-    _ = inference.append_simulations(cosmo_params, Pk) 
+    _ = inference.append_simulations(cosmo_params, Pk_data) 
     density_estimator = inference.train()
     posterior = inference.build_posterior(density_estimator)
     
     torch.save(posterior, posterior_file_name)
     
     return posterior 
-
 
 
 def infer_cosmological_parameters(posterior, test_Pk):
