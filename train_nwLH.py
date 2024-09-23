@@ -72,5 +72,21 @@ print(cosmo_params.shape)
 
 
 ####################### TRAIN MODEL #######################
+def train (cosmo_params, Pk, posterior_file_name):
+    
+    num_dim = cosmo_params.shape[1]  
+    min_vals = torch.min(cosmo_params, dim=0).values
+    max_vals = torch.max(cosmo_params, dim=0).values
+    
+    prior = utils.BoxUniform(low=min_vals, high=max_vals)
+    inference = sbi.inference.SNPE(prior=prior)
+    _ = inference.append_simulations(cosmo_params, Pk) 
+    density_estimator = inference.train()
+    posterior = inference.build_posterior(density_estimator, sample_with='mcmc', mcmc_method='nuts', max_sampling_batch_size=200)
+    
+    torch.save(posterior, posterior_file_name)
+    
+    return posterior
+
 posterior_file_name = 'posterior_nwLH_1800_0.1.pth'
 posterior = train(cosmo_params, Pk, posterior_file_name)
