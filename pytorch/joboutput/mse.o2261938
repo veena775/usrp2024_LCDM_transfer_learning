@@ -1,0 +1,24 @@
+/var/spool/slurmd/job2261938/slurm_script: line 13: conda: command not found
+CUDA Available
+Traceback (most recent call last):
+  File "/home/vk9342/USRP2024/pytorch/test.py", line 40, in <module>
+    study = optuna.load_study(study_name=study_name, storage=storage)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/_convert_positional_args.py", line 83, in converter_wrapper
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 1353, in load_study
+    return Study(study_name=study_name, storage=storage, sampler=sampler, pruner=pruner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 82, in __init__
+    study_id = storage.get_study_id_from_name(study_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_cached_storage.py", line 111, in get_study_id_from_name
+    return self._backend.get_study_id_from_name(study_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_rdb/storage.py", line 329, in get_study_id_from_name
+    study = models.StudyModel.find_or_raise_by_name(study_name, session)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_rdb/models.py", line 89, in find_or_raise_by_name
+    raise KeyError(NOT_FOUND_MSG)
+KeyError: 'Record does not exist.'

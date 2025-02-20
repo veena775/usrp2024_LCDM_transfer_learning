@@ -1,0 +1,9 @@
+/var/spool/slurmd/job2266298/slurm_script: line 13: conda: command not found
+[I 2024-10-30 15:18:47,615] A new study created in RDB with name: MPk_nwLH_params_1000
+CUDA Available
+[I 2024-10-30 15:38:59,863] Trial 0 finished with value: 0.046481088946262995 and parameters: {'lr': 3.541838835291259e-05, 'wd': 4.2807994419738384e-07, 'h1': 11, 'dr': 0.44060796632208765}. Best is trial 0 with value: 0.046481088946262995.
+[I 2024-10-30 15:41:38,189] Trial 1 finished with value: 0.04179958725968997 and parameters: {'lr': 0.004213414016041774, 'wd': 0.1421465460096435, 'h1': 11, 'dr': 0.3760580740963572}. Best is trial 1 with value: 0.04179958725968997.
+Early stopping at epoch 131 with validation loss 4.36201e-02
+[I 2024-10-30 15:45:34,214] Trial 2 finished with value: 0.03996181940038999 and parameters: {'lr': 0.002124153923974904, 'wd': 0.7416860988239861, 'h1': 13, 'dr': 0.20050533006934607}. Best is trial 2 with value: 0.03996181940038999.
+Early stopping at epoch 195 with validation loss 4.15021e-02
+slurmstepd: error: *** JOB 2266298 ON adroit-h11g2 CANCELLED AT 2024-10-30T15:55:17 ***

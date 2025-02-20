@@ -1,0 +1,45 @@
+/var/spool/slurmd/job2241713/slurm_script: line 13: conda: command not found
+[I 2024-10-03 14:49:12,035] A new study created in RDB with name: Pk_nwLH_params_1727981351
+[W 2024-10-03 14:49:13,190] Trial 0 failed with parameters: {'lr': 0.005436907482956638, 'wd': 3.217105915369144e-07, 'h1': 30, 'dr': 0.37626111491149866} because of the following error: ValueError('operands could not be broadcast together with shapes (2000,7) (5,) ').
+Traceback (most recent call last):
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main.py", line 51, in __call__
+    train_loader = data.create_dataset('train', self.seed, f_Pk, f_Pk_norm,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/data.py", line 68, in create_dataset
+    data_set = make_dataset(mode, seed, f_Pk, f_Pk_norm, f_params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/data.py", line 25, in __init__
+    params  = (params - minimum)/(maximum - minimum)
+               ~~~~~~~^~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (2000,7) (5,) 
+[W 2024-10-03 14:49:13,191] Trial 0 failed with value None.
+CUDA Available
+79 30
+Traceback (most recent call last):
+  File "/home/vk9342/USRP2024/pytorch/main.py", line 144, in <module>
+    study.optimize(objective, n_trials, n_jobs=n_jobs)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main.py", line 51, in __call__
+    train_loader = data.create_dataset('train', self.seed, f_Pk, f_Pk_norm, 
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/data.py", line 68, in create_dataset
+    data_set = make_dataset(mode, seed, f_Pk, f_Pk_norm, f_params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/data.py", line 25, in __init__
+    params  = (params - minimum)/(maximum - minimum)
+               ~~~~~~~^~~~~~~~~
+ValueError: operands could not be broadcast together with shapes (2000,7) (5,) 

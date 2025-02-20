@@ -1,0 +1,4 @@
+/var/spool/slurmd/job2266616/slurm_script: line 13: conda: command not found
+  File "/home/vk9342/USRP2024/pytorch/main_continue.py", line 39
+    lr = trial.suggest_float("lr", 1e-5, 1e-1, log=True)
+IndentationError: unexpected indent

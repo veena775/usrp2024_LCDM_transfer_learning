@@ -1,0 +1,5 @@
+/var/spool/slurmd/job2241747/slurm_script: line 13: conda: command not found
+  File "/home/vk9342/USRP2024/pytorch/main.py", line 126
+    study_name       = 'Pk_nwLH_params' %_%d' % time.time()
+                                            ^
+SyntaxError: unterminated string literal (detected at line 126)

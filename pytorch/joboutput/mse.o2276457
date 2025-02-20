@@ -1,0 +1,2 @@
+/var/spool/slurmd/job2276457/slurm_script: line 13: conda: command not found
+python: can't open file '/home/vk9342/USRP2024/pytorch/main_continue_fixed_final.py': [Errno 2] No such file or directory

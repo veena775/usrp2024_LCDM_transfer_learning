@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH -J mse
+#SBATCH --constraint=a100
+#SBATCH -t 8:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
+#SBATCH --gres=gpu:1
+#SBATCH -o /home/vk9342/USRP2024/pytorch/joboutput/mse.o%j
+#SBATCH --mail-user=vk9342@princeton.edu
+#SBATCH --mail-type=all
+
+conda activate usrp
+python main_copy.py

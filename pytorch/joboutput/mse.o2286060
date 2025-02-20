@@ -1,0 +1,8 @@
+/var/spool/slurmd/job2286060/slurm_script: line 13: conda: command not found
+Traceback (most recent call last):
+  File "/home/vk9342/USRP2024/pytorch/main_fixed_final.py", line 5, in <module>
+    import data, architecture
+  File "/home/vk9342/USRP2024/pytorch/architecture.py", line 114
+    def dynamic_model_fixed_final(trial, input_size, output_size, max_layers=3, final_hidden_layer_size,  max_neurons_layers=500):
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: non-default argument follows default argument

@@ -1,0 +1,11 @@
+/var/spool/slurmd/job2286420/slurm_script: line 13: conda: command not found
+[I 2024-12-05 14:17:19,390] A new study created in RDB with name: Pk_nwLH_params_transfer_497
+CUDA Available
+[I 2024-12-05 14:18:50,950] Trial 0 finished with value: 0.08167044132947922 and parameters: {'lr': 0.005823120999408774, 'wd': 0.43790392604603756, 'n_layers': 3, 'n_units_l0': 432, 'dropout_l0': 0.2283905523863905, 'n_units_l1': 163, 'dropout_l1': 0.4294722190165195, 'dropout_final_hidden': 0.6284297202374234}. Best is trial 0 with value: 0.08167044132947922.
+Early stopping at epoch 74 with validation loss 3.24812e-01
+[I 2024-12-05 14:20:07,337] Trial 1 finished with value: 0.08919600039720535 and parameters: {'lr': 0.0217335807226065, 'wd': 0.0013408117395760837, 'n_layers': 1, 'dropout_final_hidden': 0.34329538254579006}. Best is trial 0 with value: 0.08167044132947922.
+Early stopping at epoch 63 with validation loss 1.03817e-01
+[I 2024-12-05 14:24:52,659] Trial 2 finished with value: 0.08281104564666748 and parameters: {'lr': 1.4068288807224973e-05, 'wd': 9.049046748761016e-05, 'n_layers': 1, 'dropout_final_hidden': 0.3552381391749895}. Best is trial 0 with value: 0.08167044132947922.
+Early stopping at epoch 236 with validation loss 8.29586e-02
+[I 2024-12-05 14:26:47,408] Trial 3 finished with value: 0.3134389881292979 and parameters: {'lr': 0.0557104588962213, 'wd': 0.004109441637257455, 'n_layers': 1, 'dropout_final_hidden': 0.4825092806831917}. Best is trial 0 with value: 0.08167044132947922.
+Early stopping at epoch 95 with validation loss 3.30972e-01

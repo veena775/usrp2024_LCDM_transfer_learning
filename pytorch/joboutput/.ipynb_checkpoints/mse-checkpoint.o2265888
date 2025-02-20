@@ -1,0 +1,55 @@
+/var/spool/slurmd/job2265888/slurm_script: line 13: conda: command not found
+[I 2024-10-29 22:33:50,430] A new study created in RDB with name: MPk_nwLH_params_200
+[I 2024-10-29 22:33:50,502] Using an existing study with name 'MPk_nwLH_params_200' instead of creating a new one.
+[W 2024-10-29 22:33:50,540] Trial 0 failed with parameters: {} because of the following error: ValueError('Record does not exist.').
+Traceback (most recent call last):
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main_continue.py", line 30, in __call__
+    best_trial = study.best_trial
+                 ^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 157, in best_trial
+    return copy.deepcopy(self._storage.get_best_trial(self._study_id))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_cached_storage.py", line 182, in get_best_trial
+    return self._backend.get_best_trial(study_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_rdb/storage.py", line 915, in get_best_trial
+    trial = models.TrialModel.find_min_value_trial(study_id, 0, session)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_rdb/models.py", line 240, in find_min_value_trial
+    raise ValueError(NOT_FOUND_MSG)
+ValueError: Record does not exist.
+[W 2024-10-29 22:33:50,542] Trial 0 failed with value None.
+CUDA Available
+Traceback (most recent call last):
+  File "/home/vk9342/USRP2024/pytorch/main_continue.py", line 140, in <module>
+    study.optimize(objective, n_trials, n_jobs=n_jobs)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main_continue.py", line 30, in __call__
+    best_trial = study.best_trial
+                 ^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 157, in best_trial
+    return copy.deepcopy(self._storage.get_best_trial(self._study_id))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_cached_storage.py", line 182, in get_best_trial
+    return self._backend.get_best_trial(study_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_rdb/storage.py", line 915, in get_best_trial
+    trial = models.TrialModel.find_min_value_trial(study_id, 0, session)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_rdb/models.py", line 240, in find_min_value_trial
+    raise ValueError(NOT_FOUND_MSG)
+ValueError: Record does not exist.
