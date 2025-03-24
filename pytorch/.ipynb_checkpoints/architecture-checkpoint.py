@@ -125,21 +125,15 @@ class model_2hl_sigmoid(nn.Module):
 # output_size -------> size of the output
 # max_layers --------> maximum number of hidden layers to consider (default=3)
 # max_neurons_layer -> the maximum number of neurons a layer can have (default=500)
-def dynamic_model(trial, input_size, output_size, n_layers, max_neurons_layers=500): #nlayers
+def dynamic_model(trial, input_size, output_size, n_layers, p, out_fs, max_neurons_layers=500): #nlayers
 
     # define the tuple containing the different layers
     layers = []
-
-    # get the number of hidden layers
-    # n_layers = trial.suggest_int("n_layers", 1, max_layers)  #move this to main
-
-    # get the hidden layers
     in_features = input_size
     for i in range(n_layers):
-        out_features = trial.suggest_int("n_units_l{}".format(i), 4, max_neurons_layers)
+        out_features = out_fs[i]
         layers.append(nn.Linear(in_features, out_features))
         layers.append(nn.LeakyReLU(0.2))
-        p = trial.suggest_float("dropout_l{}".format(i), 0.2, 0.8)
         layers.append(nn.Dropout(p))
         in_features = out_features
 
@@ -152,28 +146,23 @@ def dynamic_model(trial, input_size, output_size, n_layers, max_neurons_layers=5
 
 
 
-def dynamic_model_fixed_final(trial, input_size, output_size, final_hidden_layer_size, n_layers,  max_neurons_layers=500):
+def dynamic_model_fixed_final(trial, input_size, output_size, final_hidden_layer_size, n_layers, p, out_fs, max_neurons_layers=500):
     
     # define the tuple containing the different layers
     layers = []
-
-    # get the number of hidden layers
-    # n_layers = trial.suggest_int("n_layers", 1, max_layers)
-
+    
     # get the hidden layers
     in_features = input_size
     for i in range(n_layers - 1):  # One fewer loop to leave space for the final hidden layer
-        out_features = trial.suggest_int(f"n_units_l{i}", 4, max_neurons_layers)
+        out_features = out_fs[i]
         layers.append(nn.Linear(in_features, out_features))
         layers.append(nn.LeakyReLU(0.2))
-        p = trial.suggest_float(f"dropout_l{i}", 0.2, 0.8)
         layers.append(nn.Dropout(p))
         in_features = out_features
 
     # Add the final hidden layer
     layers.append(nn.Linear(in_features, final_hidden_layer_size))
     layers.append(nn.LeakyReLU(0.2))
-    p = trial.suggest_float("dropout_final_hidden", 0.2, 0.8)
     layers.append(nn.Dropout(p))
 
     # Add the output layer

@@ -8,7 +8,7 @@ import optuna
 
 class Objective(object):
     def __init__(self, input_size, output_size, max_layers, max_neurons_layers, device, 
-                 epochs, seed, batch_size, final_hidden_layer_size, log, max_epochs_no_improvement):
+                 epochs, seed, batch_size, final_hidden_layer_size, log, model_type, max_epochs_no_improvement):
         
         self.input_size         = input_size  #power spectrum size
         self.output_size        = output_size  #n cosmo params 
@@ -24,6 +24,7 @@ class Objective(object):
         self.final_hidden_layer_size = final_hidden_layer_size
         self.log = log
         self.max_epochs_no_improvement = max_epochs_no_improvement
+        self.model_type = model_type
         self.mother = '/scratch/network/vk9342/USRP2024_scratch/pytorch/'+str(Pk_type)+'_'+str(cosm_type)+'/'+str(name)+'/' 
         
         os.makedirs(self.mother+'losses', exist_ok=1)
@@ -43,11 +44,29 @@ class Objective(object):
         wd = trial.suggest_float("wd", 1e-8, 1e0, log=True)
 
         n_layers = trial.suggest_int("n_layers", 1, max_layers)
+        p = trial.suggest_float("dropout_l", 0.2, 0.8)
         
-        # generate the architecture
-        model = architecture.dynamic_model(trial, self.input_size, 
-                                           self.output_size, #final_hidden_layer_size,
-                                           n_layers, self.max_neurons_layers).to(self.device)
+        # # generate the architecture
+        # model = architecture.dynamic_model_fixed_final(trial, self.input_size, 
+        #                                    self.output_size, final_hidden_layer_size,
+        #                                    n_layers, self.max_neurons_layers).to(self.device)
+
+        if model_type == 'dynamic_fixed_final':
+            out_fs = [trial.suggest_int( f"n_units_l{i}", 4, max_neurons_layers) for i in range(n_layers-1)]
+            model = architecture.dynamic_model_fixed_final(trial, self.input_size, 
+                                                           self.output_size, final_hidden_layer_size,
+                                                           n_layers, p, out_fs, self.max_neurons_layers
+                                                          ).to(self.device)
+        elif model_type == 'dynamic':
+            out_fs = [trial.suggest_int( f"n_units_l{i}", 4, max_neurons_layers) for i in range(n_layers)]
+            model = architecture.dynamic_model(trial, self.input_size, 
+                                               self.output_size,
+                                               n_layers, p, out_fs,
+                                               self.max_neurons_layers
+                                              ).to(self.device)  
+        else:
+            print('not a valid model')
+        
         
         # define the optimizer
         optimizer = torch.optim.AdamW(model.parameters(), lr=lr, betas=(0.5, 0.999), 
@@ -60,9 +79,13 @@ class Objective(object):
         # get the data
         
         train_loader = data.create_dataset('train', self.seed, f_Pk, f_Pk_norm, 
-                                           f_params, self.batch_size, shuffle=True, workers=1, cosm_type = cosm_type, log=log)
+                                           f_params, self.batch_size, shuffle=True, 
+                                           workers=1, cosm_type = cosm_type, log=log, 
+                                           shuffle_all=True)
         valid_loader = data.create_dataset('valid', self.seed, f_Pk, f_Pk_norm, 
-                                           f_params, self.batch_size, shuffle=False, workers=1, cosm_type = cosm_type, log=log)
+                                           f_params, self.batch_size, shuffle=False,
+                                           workers=1, cosm_type = cosm_type, log=log, 
+                                           shuffle_all = True)
 
         # Early stopping variables
         best_valid_loss = float('inf')
@@ -137,17 +160,22 @@ class Objective(object):
 # data parameters
 cosm_type = 'nwLH' #'nwLH' or 'LH'
 Pk_type = 'MPk'
-name = 'transfer5_network2_w_log_test_final_layer_BSQ'
+n_sims_nwLH = 800
+n_sims_BSQ = 32000
+name = 'transfer10_network2_'+str(n_sims_nwLH)+'_nwLH_'+str(n_sims_BSQ)+'_BSQ'
+
 log = False
 study_name  = str(Pk_type)+'_'+str(cosm_type)+'_params_'+str(name)   #+str(epochs)
 
-# f_Pk      = 'all_'+str(Pk_type)+'_'+str(cosm_type)+'.npy'
-f_Pk      = 'all_'+str(Pk_type)+'_'+str(cosm_type)+'_w_log_test_final_layer_fortransfer.npy'
-f_params  = '../real_params/' + str(cosm_type)+'_params.txt' 
-
-
+input_size         = 10
 output_size        = 6
-input_size         = 5
+final_hidden_layer_size = 10
+model_type = 'dynamic'
+
+# f_Pk      = 'Pk_files/'+str(n_sims)+'_'+str(Pk_type)+'_'+str(cosm_type)+'.npy'
+f_params  = '../real_params/'+str(n_sims_nwLH) +'_'+ str(cosm_type)+'_params.txt' 
+extension = 'fhl10'
+f_Pk      = 'Pk_files/'+str(n_sims_nwLH)+'_nwLH_'+str(n_sims_BSQ)+'_BSQ_MPk_'+str(extension)+'_fortransfer.npy'
 
 
 
@@ -156,7 +184,6 @@ seed      = 1
 # architecture parameters
 max_layers = 3
 max_neurons_layers = 500  #None
-final_hidden_layer_size = 5
 max_epochs_no_improvement=50
 
 
@@ -182,17 +209,13 @@ else:
 
 # define the optuna study and optimize it
 objective = Objective(input_size, output_size, max_layers, max_neurons_layers, 
-                      device, epochs, seed, batch_size, final_hidden_layer_size, log, max_epochs_no_improvement)
+                      device, epochs, seed, batch_size, final_hidden_layer_size, log, model_type, max_epochs_no_improvement)
+
 sampler = optuna.samplers.TPESampler(n_startup_trials=n_startup_trials)
 if study_name in optuna.study.get_all_study_names(storage=storage):
         optuna.delete_study(study_name=study_name, storage=storage)   # fixme remove in general, but for rusty just one run run for now
 study = optuna.create_study(study_name=study_name, sampler=sampler, storage=storage,
                             load_if_exists=False)
 study.optimize(objective, n_trials, n_jobs=n_jobs)
-
-
-
-
-
 
 

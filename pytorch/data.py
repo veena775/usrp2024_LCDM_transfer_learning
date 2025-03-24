@@ -7,7 +7,7 @@ import sys, os, time
 # This class creates the dataset 
 class make_dataset():
 
-    def __init__(self, mode, seed, f_Pk, f_Pk_norm, f_params, cosm_type, log):  #make name of model and then if statement 
+    def __init__(self, mode, seed, f_Pk, f_Pk_norm, f_params, cosm_type, log, shuffle_all):  #make name of model and then if statement 
 
         # read data, scale it, and normalize it
         if log == False:
@@ -46,15 +46,16 @@ class make_dataset():
 
         ## randomly shuffle the sims. Instead of 0 1 2 3...999 have a 
         ## random permutation. E.g. 5 9 0 29...342
+        if shuffle_all == True:
+            np.random.seed(seed)
+            indexes = np.arange(sims) #only shuffle realizations, not rotations
+            np.random.shuffle(indexes)
+            indexes = indexes[offset:offset+size] #select indexes of mode
+    
+            # select the data in the considered mode
+            Pk     = Pk[indexes]
+            params = params[indexes]
         
-        np.random.seed(seed)
-        indexes = np.arange(sims) #only shuffle realizations, not rotations
-        np.random.shuffle(indexes)
-        indexes = indexes[offset:offset+size] #select indexes of mode
-
-        # select the data in the considered mode
-        Pk     = Pk[indexes]
-        params = params[indexes]
 
         ## define size, input and output matrices
         self.size   = size
@@ -77,7 +78,7 @@ class make_dataset():
 # batch_size ---------> batch size
 # shuffle ------------> whether to shuffle the data or not
 # workers --------> number of CPUs to load the data in parallel
-def create_dataset(mode, seed, f_Pk, f_Pk_norm, f_params, batch_size, shuffle, workers, cosm_type, log):
-    data_set = make_dataset(mode, seed, f_Pk, f_Pk_norm, f_params, cosm_type, log)
+def create_dataset(mode, seed, f_Pk, f_Pk_norm, f_params, batch_size, shuffle, workers, cosm_type, log, shuffle_all):
+    data_set = make_dataset(mode, seed, f_Pk, f_Pk_norm, f_params, cosm_type, log, shuffle_all)
     return DataLoader(dataset=data_set, batch_size=batch_size, shuffle=shuffle,
                       num_workers=workers)
