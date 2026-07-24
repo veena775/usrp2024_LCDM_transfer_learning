@@ -1,0 +1,10 @@
+/var/spool/slurmd/job2307571/slurm_script: line 13: conda: command not found
+[I 2024-12-11 22:41:23,295] A new study created in RDB with name: Pk_nwLH_params_transfer_5
+/home/vk9342/USRP2024/pytorch/data.py:13: RuntimeWarning: divide by zero encountered in log10
+  Pk = np.log10(np.load(f_Pk))
+/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/numpy/core/_methods.py:236: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+/home/vk9342/USRP2024/pytorch/data.py:19: RuntimeWarning: invalid value encountered in subtract
+  Pk = (Pk - mean)/std
+CUDA Available
+slurmstepd: error: *** JOB 2307571 ON adroit-h11g2 CANCELLED AT 2024-12-11T22:42:39 ***

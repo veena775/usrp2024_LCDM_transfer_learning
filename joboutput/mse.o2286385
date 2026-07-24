@@ -1,0 +1,70 @@
+/var/spool/slurmd/job2286385/slurm_script: line 13: conda: command not found
+[I 2024-12-05 13:23:19,350] A new study created in RDB with name: Pk_nwLH_params_transfer_497
+/home/vk9342/USRP2024/pytorch/data.py:13: RuntimeWarning: invalid value encountered in log10
+  Pk = np.log10(np.load(f_Pk))
+CUDA Available
+[W 2024-12-05 13:23:21,129] Trial 0 failed with parameters: {'lr': 0.002037655998412226, 'wd': 0.1460062226081147, 'n_layers': 3, 'n_units_l0': 126, 'dropout_l0': 0.4423397499979492, 'n_units_l1': 256, 'dropout_l1': 0.3032860785025081, 'n_units_l2': 171, 'dropout_l2': 0.249563200225211} because of the following error: RuntimeError('mat1 and mat2 shapes cannot be multiplied (1x32 and 497x126)').
+Traceback (most recent call last):
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main_continue.py", line 84, in __call__
+    y_NN = model(x)
+           ^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 116, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x32 and 497x126)
+[W 2024-12-05 13:23:21,131] Trial 0 failed with value None.
+Traceback (most recent call last):
+  File "/home/vk9342/USRP2024/pytorch/main_continue.py", line 199, in <module>
+    study.optimize(objective, n_trials, n_jobs=n_jobs)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main_continue.py", line 84, in __call__
+    y_NN = model(x)
+           ^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 116, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x32 and 497x126)

@@ -1,0 +1,50 @@
+/var/spool/slurmd/job2241704/slurm_script: line 13: conda: command not found
+[I 2024-10-03 14:39:07,207] Using an existing study with name 'Pk_nwLH_params' instead of creating a new one.
+[W 2024-10-03 14:39:07,315] Trial 1 failed with parameters: {'lr': 0.008733003695119963, 'wd': 1.3645492246890224e-08, 'h1': 14.352482828805663, 'dr': 0.05669880880567013} because of the following error: TypeError('empty() received an invalid combination of arguments - got (tuple, dtype=NoneType, device=NoneType), but expected one of:\n * (tuple of ints size, *, tuple of names names, torch.memory_format memory_format, torch.dtype dtype, torch.layout layout, torch.device device, bool pin_memory, bool requires_grad)\n * (tuple of ints size, *, torch.memory_format memory_format, Tensor out, torch.dtype dtype, torch.layout layout, torch.device device, bool pin_memory, bool requires_grad)\n').
+Traceback (most recent call last):
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main.py", line 40, in __call__
+    model = architecture.model_1hl(self.input_size, h1, self.output_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/architecture.py", line 17, in __init__
+    self.fc1 = nn.Linear(inp, h1)
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 98, in __init__
+    self.weight = Parameter(torch.empty((out_features, in_features), **factory_kwargs))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: empty() received an invalid combination of arguments - got (tuple, dtype=NoneType, device=NoneType), but expected one of:
+ * (tuple of ints size, *, tuple of names names, torch.memory_format memory_format, torch.dtype dtype, torch.layout layout, torch.device device, bool pin_memory, bool requires_grad)
+ * (tuple of ints size, *, torch.memory_format memory_format, Tensor out, torch.dtype dtype, torch.layout layout, torch.device device, bool pin_memory, bool requires_grad)
+
+[W 2024-10-03 14:39:07,316] Trial 1 failed with value None.
+CUDA Available
+Traceback (most recent call last):
+  File "/home/vk9342/USRP2024/pytorch/main.py", line 143, in <module>
+    study.optimize(objective, n_trials, n_jobs=n_jobs)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main.py", line 40, in __call__
+    model = architecture.model_1hl(self.input_size, h1, self.output_size, 
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/architecture.py", line 17, in __init__
+    self.fc1 = nn.Linear(inp, h1) 
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 98, in __init__
+    self.weight = Parameter(torch.empty((out_features, in_features), **factory_kwargs))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: empty() received an invalid combination of arguments - got (tuple, dtype=NoneType, device=NoneType), but expected one of:
+ * (tuple of ints size, *, tuple of names names, torch.memory_format memory_format, torch.dtype dtype, torch.layout layout, torch.device device, bool pin_memory, bool requires_grad)
+ * (tuple of ints size, *, torch.memory_format memory_format, Tensor out, torch.dtype dtype, torch.layout layout, torch.device device, bool pin_memory, bool requires_grad)
+

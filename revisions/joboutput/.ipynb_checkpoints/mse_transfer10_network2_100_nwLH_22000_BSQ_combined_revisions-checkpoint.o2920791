@@ -1,0 +1,18 @@
+[I 2026-02-18 13:34:55,506] A new study created in RDB with name: Pk_nwLH_params_transfer10_network2_100_nwLH_22000_BSQ_combined_train_val_revisions
+CUDA Available
+[I 2026-02-18 13:37:50,479] Trial 0 finished with value: 0.031160217972070563 and parameters: {'lr': 0.005172276710419376, 'wd': 0.00016440608771567378, 'n_layers': 1, 'dropout_l': 0.3091327126814662, 'n_units_l0': 253}. Best is trial 0 with value: 0.031160217972070563.
+Early stopping at epoch 66 with validation loss 3.40305e-02
+[I 2026-02-18 13:51:21,276] Trial 1 finished with value: 0.026119790617741792 and parameters: {'lr': 0.0014444837744317404, 'wd': 0.000954136926409768, 'n_layers': 1, 'dropout_l': 0.6996475938349829, 'n_units_l0': 34}. Best is trial 1 with value: 0.026119790617741792.
+Early stopping at epoch 307 with validation loss 2.64291e-02
+[I 2026-02-18 13:58:33,404] Trial 2 finished with value: 0.03013846227205267 and parameters: {'lr': 0.004933016779746674, 'wd': 0.10915276307262246, 'n_layers': 2, 'dropout_l': 0.3785846191700797, 'n_units_l0': 173, 'n_units_l1': 240}. Best is trial 1 with value: 0.026119790617741792.
+Early stopping at epoch 156 with validation loss 7.62649e-02
+[I 2026-02-18 14:01:58,035] Trial 3 finished with value: 0.19576971626749226 and parameters: {'lr': 0.009805421794044996, 'wd': 0.553655257770561, 'n_layers': 3, 'dropout_l': 0.7752796230698367, 'n_units_l0': 307, 'n_units_l1': 99, 'n_units_l2': 219}. Best is trial 1 with value: 0.026119790617741792.
+Early stopping at epoch 71 with validation loss 2.14520e-01
+[I 2026-02-18 14:06:29,298] Trial 4 finished with value: 0.019486224212336773 and parameters: {'lr': 0.00022245811703826076, 'wd': 2.181034292424329e-05, 'n_layers': 2, 'dropout_l': 0.22802870908895767, 'n_units_l0': 265, 'n_units_l1': 159}. Best is trial 4 with value: 0.019486224212336773.
+Early stopping at epoch 98 with validation loss 2.17732e-02
+[I 2026-02-18 14:06:35,031] Trial 5 pruned. 
+[I 2026-02-18 14:06:40,717] Trial 6 pruned. 
+[I 2026-02-18 14:06:46,137] Trial 7 pruned. 
+[I 2026-02-18 14:17:07,540] Trial 8 finished with value: 0.022613404787638607 and parameters: {'lr': 0.001023068718458457, 'wd': 7.520187197650778e-08, 'n_layers': 2, 'dropout_l': 0.7734145424351966, 'n_units_l0': 241, 'n_units_l1': 306}. Best is trial 4 with value: 0.019486224212336773.
+Early stopping at epoch 224 with validation loss 2.29180e-02
+[I 2026-02-18 14:20:10,410] Trial 9 pruned. 

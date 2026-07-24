@@ -1,0 +1,12 @@
+/var/spool/slurmd/job2261944/slurm_script: line 13: conda: command not found
+CUDA Available
+
+Trial number 91
+Value: 4.13814e-02
+ Params: 
+    lr: 0.002254941112632238
+    wd: 0.001909635120601496
+    h1: 32
+    dr: 0.016984105191409277
+Loading model...
+Test loss: 0.04138139853874842

@@ -1,0 +1,20 @@
+/var/spool/slurmd/job2286083/slurm_script: line 13: conda: command not found
+[I 2024-12-04 20:22:03,402] A new study created in RDB with name: Pk_LH_params_dynamic_fixed_final
+CUDA Available
+[I 2024-12-04 20:27:10,245] Trial 0 finished with value: 0.05195829406380653 and parameters: {'lr': 1.2811249024024391e-05, 'wd': 3.937143487212892e-05, 'n_layers': 3, 'n_units_l0': 155, 'dropout_l0': 0.2146877845252532, 'n_units_l1': 30, 'dropout_l1': 0.675697920482855, 'dropout_final_hidden': 0.5646655932758371}. Best is trial 0 with value: 0.05195829406380653.
+Traceback (most recent call last):
+  File "/home/vk9342/USRP2024/pytorch/main_fixed_final.py", line 186, in <module>
+    study.optimize(objective, n_trials, n_jobs=n_jobs)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 208, in _run_trial
+    frozen_trial = _tell_with_warning(
+                   ^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_tell.py", line 115, in _tell_with_warning
+    raise ValueError(f"Cannot tell a {frozen_trial.state.name} trial.")
+ValueError: Cannot tell a COMPLETE trial.

@@ -1,0 +1,32 @@
+/var/spool/slurmd/job2241703/slurm_script: line 13: conda: command not found
+[I 2024-10-03 14:37:28,225] A new study created in RDB with name: Pk_nwLH_params
+[W 2024-10-03 14:37:28,333] Trial 0 failed with parameters: {'lr': 0.0023753714473858426, 'wd': 2.9923279318846794e-05, 'h1': 14.884668642028814, 'dr': 0.4980914228472361} because of the following error: TypeError('model_1hl.__init__() takes 5 positional arguments but 6 were given').
+Traceback (most recent call last):
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main.py", line 40, in __call__
+    model = architecture.model_1hl(trial, self.input_size, h1, self.output_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: model_1hl.__init__() takes 5 positional arguments but 6 were given
+[W 2024-10-03 14:37:28,334] Trial 0 failed with value None.
+CUDA Available
+Traceback (most recent call last):
+  File "/home/vk9342/USRP2024/pytorch/main.py", line 143, in <module>
+    study.optimize(objective, n_trials, n_jobs=n_jobs)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main.py", line 40, in __call__
+    model = architecture.model_1hl(trial, self.input_size, h1, self.output_size, 
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: model_1hl.__init__() takes 5 positional arguments but 6 were given

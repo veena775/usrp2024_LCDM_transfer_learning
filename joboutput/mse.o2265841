@@ -1,0 +1,32 @@
+/var/spool/slurmd/job2265841/slurm_script: line 13: conda: command not found
+[I 2024-10-29 22:00:28,330] A new study created in RDB with name: Pk_nwLH_params_100
+[W 2024-10-29 22:00:28,379] Trial 0 failed with parameters: {} because of the following error: UnboundLocalError("cannot access local variable 'h1' where it is not associated with a value").
+Traceback (most recent call last):
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main_continue.py", line 33, in __call__
+    model = architecture.model_1hl(self.input_size, h1, self.output_size, dr).to(self.device)
+                                                    ^^
+UnboundLocalError: cannot access local variable 'h1' where it is not associated with a value
+[W 2024-10-29 22:00:28,380] Trial 0 failed with value None.
+CUDA Available
+Traceback (most recent call last):
+  File "/home/vk9342/USRP2024/pytorch/main_continue.py", line 165, in <module>
+    study.optimize(objective, n_trials, n_jobs=n_jobs)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main_continue.py", line 33, in __call__
+    model = architecture.model_1hl(self.input_size, h1, self.output_size, dr).to(self.device)
+                                                    ^^
+UnboundLocalError: cannot access local variable 'h1' where it is not associated with a value

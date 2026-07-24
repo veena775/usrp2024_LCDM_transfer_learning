@@ -1,0 +1,65 @@
+[I 2026-02-23 16:18:01,021] A new study created in RDB with name: Pk_BSQ_params_transfer10_network1_2000_BSQ_k_0.1
+[W 2026-02-23 16:18:01,873] Trial 0 failed with parameters: {'lr': 0.01435205599130293, 'wd': 3.7108379472802806e-07, 'n_layers': 1, 'dropout_l': 0.5560228610321793, 'n_units_l0': 317} because of the following error: FileNotFoundError('../../real_params/all_BSQ_params_k_0.1.txt not found.').
+Traceback (most recent call last):
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/scratch/network/vk9342/USRP2024/pytorch/revisions/main_BSQ_node_k_cut_0.1.py", line 82, in __call__
+    full_train_dataset = data.create_dataset('train', self.seed, f_Pk, f_Pk_norm,
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/network/vk9342/USRP2024/pytorch/revisions/data.py", line 102, in create_dataset
+    data_set = make_dataset(mode, seed, f_Pk, f_Pk_norm, f_params, cosm_type, log, shuffle_all)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/network/vk9342/USRP2024/pytorch/revisions/data.py", line 26, in __init__
+    params  = np.loadtxt(f_params)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/numpy/lib/npyio.py", line 1373, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/numpy/lib/npyio.py", line 992, in _read
+    fh = np.lib._datasource.open(fname, 'rt', encoding=encoding)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/numpy/lib/_datasource.py", line 193, in open
+    return ds.open(path, mode, encoding=encoding, newline=newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/numpy/lib/_datasource.py", line 533, in open
+    raise FileNotFoundError(f"{path} not found.")
+FileNotFoundError: ../../real_params/all_BSQ_params_k_0.1.txt not found.
+[W 2026-02-23 16:18:01,875] Trial 0 failed with value None.
+CUDA Available
+Traceback (most recent call last):
+  File "/scratch/network/vk9342/USRP2024/pytorch/revisions/main_BSQ_node_k_cut_0.1.py", line 247, in <module>
+    study.optimize(objective, n_trials, n_jobs=n_jobs)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/scratch/network/vk9342/USRP2024/pytorch/revisions/main_BSQ_node_k_cut_0.1.py", line 82, in __call__
+    full_train_dataset = data.create_dataset('train', self.seed, f_Pk, f_Pk_norm, 
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/network/vk9342/USRP2024/pytorch/revisions/data.py", line 102, in create_dataset
+    data_set = make_dataset(mode, seed, f_Pk, f_Pk_norm, f_params, cosm_type, log, shuffle_all)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/network/vk9342/USRP2024/pytorch/revisions/data.py", line 26, in __init__
+    params  = np.loadtxt(f_params)
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/numpy/lib/npyio.py", line 1373, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/numpy/lib/npyio.py", line 992, in _read
+    fh = np.lib._datasource.open(fname, 'rt', encoding=encoding)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/numpy/lib/_datasource.py", line 193, in open
+    return ds.open(path, mode, encoding=encoding, newline=newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/numpy/lib/_datasource.py", line 533, in open
+    raise FileNotFoundError(f"{path} not found.")
+FileNotFoundError: ../../real_params/all_BSQ_params_k_0.1.txt not found.

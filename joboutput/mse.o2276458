@@ -1,0 +1,5 @@
+/var/spool/slurmd/job2276458/slurm_script: line 13: conda: command not found
+  File "/home/vk9342/USRP2024/pytorch/main_fixed_final.py", line 11
+    epochs, seed, batch_size, max_epochs_no_improvement=50, final_hidden_units):
+                                                            ^^^^^^^^^^^^^^^^^^
+SyntaxError: non-default argument follows default argument

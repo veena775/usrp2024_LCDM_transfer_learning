@@ -1,0 +1,119 @@
+[I 2026-03-03 20:49:39,078] A new study created in RDB with name: Pk_nwLH_params_transfer10_network2_1400_nwLH_22000_BSQ_combined_weighted
+CUDA Available
+[I 2026-03-03 21:10:18,325] Trial 0 finished with value: 0.018832376394786087 and parameters: {'lr': 6.49281162431974e-05, 'wd': 0.00027579919254056516, 'n_layers': 2, 'dropout_l': 0.3111480254121722, 'n_units_l0': 267, 'n_units_l1': 120}. Best is trial 0 with value: 0.018832376394786087.
+Early stopping at epoch 429 with validation loss 1.96777e-02
+[I 2026-03-03 21:23:21,148] Trial 1 finished with value: 0.022382791571173014 and parameters: {'lr': 0.0007049984688537204, 'wd': 8.230622149743569e-07, 'n_layers': 1, 'dropout_l': 0.5275721898632213, 'n_units_l0': 453}. Best is trial 0 with value: 0.018832376394786087.
+Early stopping at epoch 283 with validation loss 2.44515e-02
+[I 2026-03-03 21:28:01,188] Trial 2 finished with value: 0.026874315326704697 and parameters: {'lr': 0.0015474497737535907, 'wd': 0.016749411670786286, 'n_layers': 1, 'dropout_l': 0.6782127109868494, 'n_units_l0': 369}. Best is trial 0 with value: 0.018832376394786087.
+Early stopping at epoch 101 with validation loss 2.71591e-02
+[I 2026-03-03 21:30:35,558] Trial 3 finished with value: 0.2672639740915859 and parameters: {'lr': 0.032817977570829, 'wd': 1.0301048710054e-05, 'n_layers': 3, 'dropout_l': 0.4685039679059609, 'n_units_l0': 431, 'n_units_l1': 109, 'n_units_l2': 495}. Best is trial 0 with value: 0.018832376394786087.
+Early stopping at epoch 51 with validation loss 3.74289e-01
+[I 2026-03-03 21:39:55,361] Trial 4 finished with value: 0.021955771162813786 and parameters: {'lr': 0.003138992032487092, 'wd': 0.023330724395220562, 'n_layers': 3, 'dropout_l': 0.2012693047381224, 'n_units_l0': 331, 'n_units_l1': 244, 'n_units_l2': 40}. Best is trial 0 with value: 0.018832376394786087.
+Early stopping at epoch 185 with validation loss 2.90034e-02
+[I 2026-03-03 21:40:01,110] Trial 5 pruned. 
+[I 2026-03-03 21:40:04,073] Trial 6 pruned. 
+[I 2026-03-03 21:40:07,230] Trial 7 pruned. 
+[I 2026-03-03 21:40:10,426] Trial 8 pruned. 
+[I 2026-03-03 21:40:13,521] Trial 9 pruned. 
+[I 2026-03-03 21:40:19,501] Trial 10 pruned. 
+[I 2026-03-03 21:40:22,770] Trial 11 pruned. 
+[I 2026-03-03 21:40:29,036] Trial 12 pruned. 
+[I 2026-03-03 21:40:59,586] Trial 13 pruned. 
+[I 2026-03-03 21:41:02,734] Trial 14 pruned. 
+[I 2026-03-03 21:41:05,736] Trial 15 pruned. 
+[I 2026-03-03 21:41:08,930] Trial 16 pruned. 
+[I 2026-03-03 21:41:23,076] Trial 17 pruned. 
+[I 2026-03-03 21:41:26,384] Trial 18 pruned. 
+[I 2026-03-03 21:41:29,336] Trial 19 pruned. 
+[I 2026-03-03 21:54:22,141] Trial 20 finished with value: 0.0175923526959092 and parameters: {'lr': 0.0002685493027246387, 'wd': 0.0005516714878687748, 'n_layers': 2, 'dropout_l': 0.3082913998507262, 'n_units_l0': 222, 'n_units_l1': 477}. Best is trial 20 with value: 0.0175923526959092.
+Early stopping at epoch 266 with validation loss 2.00621e-02
+[I 2026-03-03 22:02:42,235] Trial 21 finished with value: 0.018225913670133143 and parameters: {'lr': 0.00031164553114758055, 'wd': 0.00038648417179205875, 'n_layers': 2, 'dropout_l': 0.31708579453430275, 'n_units_l0': 225, 'n_units_l1': 493}. Best is trial 20 with value: 0.0175923526959092.
+Early stopping at epoch 172 with validation loss 1.82775e-02
+[I 2026-03-03 22:10:12,934] Trial 22 finished with value: 0.018495604220558615 and parameters: {'lr': 0.00026780687301905813, 'wd': 0.00033530719774575843, 'n_layers': 2, 'dropout_l': 0.3150786509125555, 'n_units_l0': 215, 'n_units_l1': 482}. Best is trial 20 with value: 0.0175923526959092.
+Early stopping at epoch 155 with validation loss 1.98988e-02
+[I 2026-03-03 22:25:07,758] Trial 23 finished with value: 0.018442221374488345 and parameters: {'lr': 0.0003041240863074273, 'wd': 0.00023287481025276982, 'n_layers': 2, 'dropout_l': 0.41758383044203573, 'n_units_l0': 222, 'n_units_l1': 490}. Best is trial 20 with value: 0.0175923526959092.
+Early stopping at epoch 308 with validation loss 1.91767e-02
+[I 2026-03-03 22:25:10,976] Trial 24 pruned. 
+[I 2026-03-03 22:25:14,196] Trial 25 pruned. 
+[I 2026-03-03 22:25:17,368] Trial 26 pruned. 
+[I 2026-03-03 22:37:48,376] Trial 27 finished with value: 0.017396847658297594 and parameters: {'lr': 0.00034542325614534065, 'wd': 7.095718804036917e-05, 'n_layers': 2, 'dropout_l': 0.2774596723972987, 'n_units_l0': 304, 'n_units_l1': 436}. Best is trial 27 with value: 0.017396847658297594.
+Early stopping at epoch 258 with validation loss 1.85765e-02
+[I 2026-03-03 22:37:51,549] Trial 28 pruned. 
+[I 2026-03-03 22:37:54,720] Trial 29 pruned. 
+[I 2026-03-03 22:37:57,689] Trial 30 pruned. 
+[I 2026-03-03 22:43:43,396] Trial 31 pruned. 
+[I 2026-03-03 22:52:36,706] Trial 32 finished with value: 0.01803350646998368 and parameters: {'lr': 0.00046480435642015037, 'wd': 0.009282327059575766, 'n_layers': 2, 'dropout_l': 0.27251066037658905, 'n_units_l0': 274, 'n_units_l1': 499}. Best is trial 27 with value: 0.017396847658297594.
+Early stopping at epoch 184 with validation loss 1.82252e-02
+[I 2026-03-03 22:52:42,741] Trial 33 pruned. 
+[I 2026-03-03 22:59:15,875] Trial 34 finished with value: 0.01769162010620622 and parameters: {'lr': 0.0005145500502265053, 'wd': 0.0005764187394163237, 'n_layers': 2, 'dropout_l': 0.20233098404759986, 'n_units_l0': 311, 'n_units_l1': 411}. Best is trial 27 with value: 0.017396847658297594.
+Early stopping at epoch 135 with validation loss 1.95129e-02
+[I 2026-03-03 23:05:11,168] Trial 35 pruned. 
+[I 2026-03-03 23:05:14,300] Trial 36 pruned. 
+[I 2026-03-03 23:05:17,461] Trial 37 pruned. 
+[I 2026-03-03 23:10:39,810] Trial 38 pruned. 
+[I 2026-03-03 23:10:42,837] Trial 39 pruned. 
+[I 2026-03-03 23:10:54,675] Trial 40 pruned. 
+[I 2026-03-03 23:12:26,881] Trial 41 pruned. 
+[I 2026-03-03 23:12:30,039] Trial 42 pruned. 
+[I 2026-03-03 23:12:53,473] Trial 43 pruned. 
+[I 2026-03-03 23:12:56,666] Trial 44 pruned. 
+[I 2026-03-03 23:23:29,842] Trial 45 finished with value: 0.017198699102097866 and parameters: {'lr': 0.0007273744307465752, 'wd': 0.0011240243099156877, 'n_layers': 3, 'dropout_l': 0.22165899211866097, 'n_units_l0': 155, 'n_units_l1': 499, 'n_units_l2': 212}. Best is trial 45 with value: 0.017198699102097866.
+Early stopping at epoch 209 with validation loss 2.10239e-02
+[I 2026-03-03 23:23:32,980] Trial 46 pruned. 
+[I 2026-03-03 23:23:45,212] Trial 47 pruned. 
+[I 2026-03-03 23:24:09,693] Trial 48 pruned. 
+[I 2026-03-03 23:24:16,103] Trial 49 pruned. 
+[I 2026-03-03 23:24:19,268] Trial 50 pruned. 
+[I 2026-03-03 23:24:22,465] Trial 51 pruned. 
+[I 2026-03-03 23:24:25,419] Trial 52 pruned. 
+[I 2026-03-03 23:24:28,633] Trial 53 pruned. 
+[I 2026-03-03 23:29:33,767] Trial 54 pruned. 
+[I 2026-03-03 23:29:36,951] Trial 55 pruned. 
+[I 2026-03-03 23:29:40,002] Trial 56 pruned. 
+[I 2026-03-03 23:29:43,163] Trial 57 pruned. 
+[I 2026-03-03 23:29:46,337] Trial 58 pruned. 
+[I 2026-03-03 23:29:49,474] Trial 59 pruned. 
+[I 2026-03-03 23:30:52,427] Trial 60 pruned. 
+[I 2026-03-03 23:30:55,608] Trial 61 pruned. 
+[I 2026-03-03 23:31:04,628] Trial 62 pruned. 
+[I 2026-03-03 23:31:07,855] Trial 63 pruned. 
+[I 2026-03-03 23:32:12,031] Trial 64 pruned. 
+[I 2026-03-03 23:32:15,108] Trial 65 pruned. 
+[I 2026-03-03 23:32:18,324] Trial 66 pruned. 
+[I 2026-03-03 23:32:21,521] Trial 67 pruned. 
+[I 2026-03-03 23:32:24,723] Trial 68 pruned. 
+[I 2026-03-03 23:32:27,808] Trial 69 pruned. 
+[I 2026-03-03 23:32:31,125] Trial 70 pruned. 
+[I 2026-03-03 23:32:34,329] Trial 71 pruned. 
+[I 2026-03-03 23:34:48,405] Trial 72 pruned. 
+[I 2026-03-03 23:34:51,612] Trial 73 pruned. 
+[I 2026-03-03 23:34:54,804] Trial 74 pruned. 
+[I 2026-03-03 23:34:58,015] Trial 75 pruned. 
+[I 2026-03-03 23:38:10,617] Trial 76 pruned. 
+[I 2026-03-03 23:38:13,849] Trial 77 pruned. 
+[I 2026-03-03 23:38:17,015] Trial 78 pruned. 
+[I 2026-03-03 23:38:20,226] Trial 79 pruned. 
+[I 2026-03-03 23:38:23,379] Trial 80 pruned. 
+[I 2026-03-03 23:38:29,487] Trial 81 pruned. 
+[I 2026-03-03 23:38:32,642] Trial 82 pruned. 
+[I 2026-03-03 23:38:35,832] Trial 83 pruned. 
+[I 2026-03-03 23:38:39,034] Trial 84 pruned. 
+[I 2026-03-03 23:38:42,227] Trial 85 pruned. 
+[I 2026-03-03 23:38:48,324] Trial 86 pruned. 
+[I 2026-03-03 23:38:51,521] Trial 87 pruned. 
+[I 2026-03-03 23:38:57,612] Trial 88 pruned. 
+[I 2026-03-03 23:48:44,789] Trial 89 finished with value: 0.016853007165824666 and parameters: {'lr': 0.0002655543741254367, 'wd': 0.0004316579636464644, 'n_layers': 3, 'dropout_l': 0.2748148488920092, 'n_units_l0': 193, 'n_units_l1': 224, 'n_units_l2': 344}. Best is trial 89 with value: 0.016853007165824666.
+Early stopping at epoch 194 with validation loss 2.04254e-02
+[I 2026-03-03 23:48:48,077] Trial 90 pruned. 
+[I 2026-03-03 23:48:51,182] Trial 91 pruned. 
+[I 2026-03-03 23:48:54,454] Trial 92 pruned. 
+[I 2026-03-03 23:49:00,636] Trial 93 pruned. 
+[I 2026-03-03 23:55:59,724] Trial 94 finished with value: 0.016833024287925047 and parameters: {'lr': 0.0003904838867458439, 'wd': 9.170726307381238e-05, 'n_layers': 3, 'dropout_l': 0.254809139184921, 'n_units_l0': 204, 'n_units_l1': 492, 'n_units_l2': 483}. Best is trial 94 with value: 0.016833024287925047.
+Early stopping at epoch 138 with validation loss 2.03936e-02
+[I 2026-03-04 00:03:57,251] Trial 95 finished with value: 0.01678532441164933 and parameters: {'lr': 0.0003819355826280466, 'wd': 4.369667067382753e-05, 'n_layers': 3, 'dropout_l': 0.251722004081145, 'n_units_l0': 199, 'n_units_l1': 489, 'n_units_l2': 496}. Best is trial 95 with value: 0.01678532441164933.
+Early stopping at epoch 157 with validation loss 1.72092e-02
+[I 2026-03-04 00:20:11,720] Trial 96 finished with value: 0.016174723015112035 and parameters: {'lr': 0.00039185126294646384, 'wd': 1.1197438924154192e-05, 'n_layers': 3, 'dropout_l': 0.24977052118629484, 'n_units_l0': 200, 'n_units_l1': 488, 'n_units_l2': 495}. Best is trial 96 with value: 0.016174723015112035.
+Early stopping at epoch 321 with validation loss 1.73763e-02
+[I 2026-03-04 00:20:15,033] Trial 97 pruned. 
+[I 2026-03-04 00:20:18,322] Trial 98 pruned. 
+[I 2026-03-04 00:20:21,626] Trial 99 pruned. 

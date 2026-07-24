@@ -1,0 +1,49 @@
+/var/spool/slurmd/job2241715/slurm_script: line 13: conda: command not found
+[I 2024-10-03 14:52:36,710] A new study created in memory with name: no-name-b324be98-7ff1-4bee-aad4-15d5884f1857
+CUDA Available
+79 29
+[W 2024-10-03 14:52:39,021] Trial 0 failed with parameters: {'lr': 0.014480280559734788, 'wd': 0.0020911213072867287, 'h1': 29, 'dr': 0.020254839159648375} because of the following error: RuntimeError('Parent directory models does not exist.').
+Traceback (most recent call last):
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main.py", line 91, in __call__
+    torch.save(model.state_dict(), fmodel)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/serialization.py", line 627, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/serialization.py", line 501, in _open_zipfile_writer
+    return container(name_or_buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/serialization.py", line 472, in __init__
+    super().__init__(torch._C.PyTorchFileWriter(self.name))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Parent directory models does not exist.
+[W 2024-10-03 14:52:39,023] Trial 0 failed with value None.
+Traceback (most recent call last):
+  File "/home/vk9342/USRP2024/pytorch/main.py", line 144, in <module>
+    study.optimize(objective, n_trials, n_jobs=n_jobs)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main.py", line 91, in __call__
+    torch.save(model.state_dict(), fmodel)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/serialization.py", line 627, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/serialization.py", line 501, in _open_zipfile_writer
+    return container(name_or_buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/torch/serialization.py", line 472, in __init__
+    super().__init__(torch._C.PyTorchFileWriter(self.name))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Parent directory models does not exist.

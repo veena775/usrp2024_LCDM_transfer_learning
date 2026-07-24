@@ -1,0 +1,49 @@
+[I 2026-02-26 16:24:07,157] A new study created in RDB with name: MPk_nwLH_params_transfer10_network2_50_nwLH_2000_BSQ_k_0.3
+[W 2026-02-26 16:24:07,919] Trial 0 failed with parameters: {'lr': 0.00039099441850065663, 'wd': 0.010493552768796306} because of the following error: FileNotFoundError(2, 'No such file or directory').
+Traceback (most recent call last):
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/scratch/network/vk9342/USRP2024/pytorch/revisions/main_copy_transfer_MPk_2000_0.3.py", line 80, in __call__
+    full_train_dataset = data.create_dataset('train', self.seed, f_Pk, f_Pk_norm,
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/network/vk9342/USRP2024/pytorch/revisions/data.py", line 102, in create_dataset
+    data_set = make_dataset(mode, seed, f_Pk, f_Pk_norm, f_params, cosm_type, log, shuffle_all)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/network/vk9342/USRP2024/pytorch/revisions/data.py", line 16, in __init__
+    Pk = np.log10(np.load(f_Pk))
+                  ^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/numpy/lib/npyio.py", line 427, in load
+    fid = stack.enter_context(open(os_fspath(file), "rb"))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'Pk_files/all_MPk_nwLH_k_0.3.npy'
+[W 2026-02-26 16:24:07,920] Trial 0 failed with value None.
+CUDA Available
+Traceback (most recent call last):
+  File "/scratch/network/vk9342/USRP2024/pytorch/revisions/main_copy_transfer_MPk_2000_0.3.py", line 279, in <module>
+    study.optimize(objective, n_trials, n_jobs=n_jobs)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/scratch/network/vk9342/USRP2024/pytorch/revisions/main_copy_transfer_MPk_2000_0.3.py", line 80, in __call__
+    full_train_dataset = data.create_dataset('train', self.seed, f_Pk, f_Pk_norm, 
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/network/vk9342/USRP2024/pytorch/revisions/data.py", line 102, in create_dataset
+    data_set = make_dataset(mode, seed, f_Pk, f_Pk_norm, f_params, cosm_type, log, shuffle_all)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/network/vk9342/USRP2024/pytorch/revisions/data.py", line 16, in __init__
+    Pk = np.log10(np.load(f_Pk))
+                  ^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/numpy/lib/npyio.py", line 427, in load
+    fid = stack.enter_context(open(os_fspath(file), "rb"))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'Pk_files/all_MPk_nwLH_k_0.3.npy'

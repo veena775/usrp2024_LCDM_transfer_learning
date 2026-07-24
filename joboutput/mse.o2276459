@@ -1,0 +1,38 @@
+/var/spool/slurmd/job2276459/slurm_script: line 13: conda: command not found
+[I 2024-11-26 13:15:52,445] A new study created in RDB with name: Pk_LH_params_dynamic_fixed_final
+[W 2024-11-26 13:15:52,551] Trial 0 failed with parameters: {'lr': 1.6960260719333184e-05, 'wd': 0.19815903968023046, 'n_layers': 1} because of the following error: UnboundLocalError("cannot access local variable 'i' where it is not associated with a value").
+Traceback (most recent call last):
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main_fixed_final.py", line 49, in __call__
+    model, final_hidden = architecture. dynamic_model_fixed(trial, self.input_size, self.output_size,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/architecture.py", line 136, in dynamic_model_fixed
+    p = trial.suggest_float("dropout_l{}".format(i+1), 0.2, 0.8)
+                                                 ^
+UnboundLocalError: cannot access local variable 'i' where it is not associated with a value
+[W 2024-11-26 13:15:52,552] Trial 0 failed with value None.
+CUDA Available
+Traceback (most recent call last):
+  File "/home/vk9342/USRP2024/pytorch/main_fixed_final.py", line 185, in <module>
+    study.optimize(objective, n_trials, n_jobs=n_jobs)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main_fixed_final.py", line 49, in __call__
+    model, final_hidden = architecture. dynamic_model_fixed(trial, self.input_size, self.output_size, 
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/architecture.py", line 136, in dynamic_model_fixed
+    p = trial.suggest_float("dropout_l{}".format(i+1), 0.2, 0.8)
+                                                 ^
+UnboundLocalError: cannot access local variable 'i' where it is not associated with a value

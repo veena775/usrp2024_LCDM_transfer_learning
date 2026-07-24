@@ -1,0 +1,38 @@
+/var/spool/slurmd/job2266618/slurm_script: line 13: conda: command not found
+[I 2024-10-31 01:32:53,440] A new study created in RDB with name: MPk_nwLH_params_1000_sigmoid
+[W 2024-10-31 01:32:53,513] Trial 0 failed with parameters: {'lr': 0.0008970155368648767, 'wd': 1.84877548667147e-05, 'h1': 16, 'dr': 0.23089126361586093} because of the following error: TypeError('super(type, obj): obj must be an instance or subtype of type').
+Traceback (most recent call last):
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main_continue.py", line 60, in __call__
+    model = architecture.model_1hl_sigmoid(self.input_size, h1, self.output_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/architecture.py", line 50, in __init__
+    super(model_1hl, self).__init__()
+    ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: super(type, obj): obj must be an instance or subtype of type
+[W 2024-10-31 01:32:53,514] Trial 0 failed with value None.
+CUDA Available
+Traceback (most recent call last):
+  File "/home/vk9342/USRP2024/pytorch/main_continue.py", line 185, in <module>
+    study.optimize(objective, n_trials, n_jobs=n_jobs)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main_continue.py", line 60, in __call__
+    model = architecture.model_1hl_sigmoid(self.input_size, h1, self.output_size, 
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/architecture.py", line 50, in __init__
+    super(model_1hl, self).__init__()
+    ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: super(type, obj): obj must be an instance or subtype of type

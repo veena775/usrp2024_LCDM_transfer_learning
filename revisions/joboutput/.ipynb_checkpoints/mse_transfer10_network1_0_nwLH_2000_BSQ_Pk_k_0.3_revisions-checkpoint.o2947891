@@ -1,0 +1,4 @@
+[I 2026-02-24 00:22:09,166] A new study created in RDB with name: Pk_BSQ_params_transfer10_network1_2000_BSQ_k_0.3
+CUDA Available
+[I 2026-02-24 00:26:10,982] Trial 0 finished with value: 0.028014004429181418 and parameters: {'lr': 0.007287849504111307, 'wd': 1.3055680117645392e-05, 'n_layers': 1, 'dropout_l': 0.6344625632355994, 'n_units_l0': 135}. Best is trial 0 with value: 0.028014004429181418.
+Early stopping at epoch 158 with validation loss 2.93799e-02

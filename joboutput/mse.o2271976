@@ -1,0 +1,56 @@
+/var/spool/slurmd/job2271976/slurm_script: line 13: conda: command not found
+[I 2024-11-14 05:25:28,234] A new study created in RDB with name: Pk_nwLH_params_dynamic
+[W 2024-11-14 05:25:28,338] Trial 0 failed with parameters: {'lr': 0.0007513321557147485, 'wd': 0.020153292832914456, 'n_layers': 1} because of the following error: TypeError("'>' not supported between instances of 'int' and 'NoneType'").
+Traceback (most recent call last):
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main_continue.py", line 49, in __call__
+    model = architecture.dynamic_model(trial, self.input_size, self.output_size, self.max_layers,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/architecture.py", line 98, in dynamic_model
+    out_features = trial.suggest_int("n_units_l{}".format(i), 4, max_neurons_layers)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/_convert_positional_args.py", line 83, in converter_wrapper
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/trial/_trial.py", line 325, in suggest_int
+    distribution = IntDistribution(low=low, high=high, log=log, step=step)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/distributions.py", line 351, in __init__
+    if low > high:
+       ^^^^^^^^^^
+TypeError: '>' not supported between instances of 'int' and 'NoneType'
+[W 2024-11-14 05:25:28,341] Trial 0 failed with value None.
+CUDA Available
+Traceback (most recent call last):
+  File "/home/vk9342/USRP2024/pytorch/main_continue.py", line 192, in <module>
+    study.optimize(objective, n_trials, n_jobs=n_jobs)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main_continue.py", line 49, in __call__
+    model = architecture.dynamic_model(trial, self.input_size, self.output_size, self.max_layers,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/architecture.py", line 98, in dynamic_model
+    out_features = trial.suggest_int("n_units_l{}".format(i), 4, max_neurons_layers)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/_convert_positional_args.py", line 83, in converter_wrapper
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/trial/_trial.py", line 325, in suggest_int
+    distribution = IntDistribution(low=low, high=high, log=log, step=step)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/distributions.py", line 351, in __init__
+    if low > high:
+       ^^^^^^^^^^
+TypeError: '>' not supported between instances of 'int' and 'NoneType'

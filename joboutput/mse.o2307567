@@ -1,0 +1,6 @@
+/var/spool/slurmd/job2307567/slurm_script: line 13: conda: command not found
+[I 2024-12-11 22:35:33,350] A new study created in RDB with name: Pk_nwLH_params_transfer_5
+/home/vk9342/USRP2024/pytorch/data.py:13: RuntimeWarning: invalid value encountered in log10
+  Pk = np.log10(np.load(f_Pk))
+CUDA Available
+slurmstepd: error: *** JOB 2307567 ON adroit-h11g2 CANCELLED AT 2024-12-11T22:36:01 ***

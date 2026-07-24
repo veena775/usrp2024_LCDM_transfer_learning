@@ -1,0 +1,6 @@
+[I 2026-02-19 13:39:30,261] A new study created in RDB with name: Pk_nwLH_params_transfer10_network2_50_nwLH_22000_BSQ_combined_train_val_revisions
+CUDA Available
+[I 2026-02-19 14:10:12,923] Trial 0 finished with value: 0.01727149214412944 and parameters: {'lr': 5.5513486128065234e-05, 'wd': 2.492542332191144e-06, 'n_layers': 2, 'dropout_l': 0.5222448508048083, 'n_units_l0': 486, 'n_units_l1': 147}. Best is trial 0 with value: 0.01727149214412944.
+Early stopping at epoch 673 with validation loss 1.73535e-02
+[I 2026-02-19 14:14:49,970] Trial 1 finished with value: 0.18643858862858192 and parameters: {'lr': 0.08194550180233348, 'wd': 6.110706077782738e-08, 'n_layers': 1, 'dropout_l': 0.434340768844897, 'n_units_l0': 197}. Best is trial 0 with value: 0.01727149214412944.
+Early stopping at epoch 106 with validation loss 2.00963e-01

@@ -1,0 +1,4 @@
+/var/spool/slurmd/job2269277/slurm_script: line 13: conda: command not found
+[I 2024-11-07 14:15:23,412] A new study created in RDB with name: MPk_nwLH_params_1000_logsigma
+CUDA Available
+slurmstepd: error: *** JOB 2269277 ON adroit-h11g2 CANCELLED AT 2024-11-07T14:18:26 ***

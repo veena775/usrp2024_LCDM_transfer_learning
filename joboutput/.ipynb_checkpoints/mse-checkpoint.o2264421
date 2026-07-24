@@ -1,0 +1,6 @@
+/var/spool/slurmd/job2264421/slurm_script: line 13: conda: command not found
+Traceback (most recent call last):
+  File "/home/vk9342/USRP2024/pytorch/main_continue.py", line 98, in <module>
+    objective = Objective(input_size, output_size, max_neurons_layers, device, epochs, seed, batch_size, resume_training)
+                          ^^^^^^^^^^
+NameError: name 'input_size' is not defined

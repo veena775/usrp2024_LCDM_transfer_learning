@@ -1,0 +1,72 @@
+/var/spool/slurmd/job2241707/slurm_script: line 13: conda: command not found
+[I 2024-10-03 14:42:42,023] Using an existing study with name 'Pk_nwLH_params' instead of creating a new one.
+[W 2024-10-03 14:42:42,117] Trial 4 failed with parameters: {'lr': 2.3878130741523298e-05, 'wd': 2.357130805436007e-07} because of the following error: ValueError('Cannot set different distribution kind to the same parameter name.').
+Traceback (most recent call last):
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main.py", line 35, in __call__
+    h1 = trial.suggest_int("h1", 10, 32)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/_convert_positional_args.py", line 83, in converter_wrapper
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/trial/_trial.py", line 326, in suggest_int
+    suggested_value = int(self._suggest(name, distribution))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/trial/_trial.py", line 635, in _suggest
+    storage.set_trial_param(trial_id, name, param_value_in_internal_repr, distribution)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_cached_storage.py", line 171, in set_trial_param
+    self._backend.set_trial_param(trial_id, param_name, param_value_internal, distribution)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_rdb/storage.py", line 568, in set_trial_param
+    self._set_trial_param_without_commit(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_rdb/storage.py", line 603, in _set_trial_param_without_commit
+    trial_param.check_and_add(session)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_rdb/models.py", line 360, in check_and_add
+    self._check_compatibility_with_previous_trial_param_distributions(session)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_rdb/models.py", line 376, in _check_compatibility_with_previous_trial_param_distributions
+    distributions.check_distribution_compatibility(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/distributions.py", line 656, in check_distribution_compatibility
+    raise ValueError("Cannot set different distribution kind to the same parameter name.")
+ValueError: Cannot set different distribution kind to the same parameter name.
+[W 2024-10-03 14:42:42,119] Trial 4 failed with value None.
+CUDA Available
+Traceback (most recent call last):
+  File "/home/vk9342/USRP2024/pytorch/main.py", line 143, in <module>
+    study.optimize(objective, n_trials, n_jobs=n_jobs)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main.py", line 35, in __call__
+    h1 = trial.suggest_int("h1", 10, 32)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/_convert_positional_args.py", line 83, in converter_wrapper
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/trial/_trial.py", line 326, in suggest_int
+    suggested_value = int(self._suggest(name, distribution))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/trial/_trial.py", line 635, in _suggest
+    storage.set_trial_param(trial_id, name, param_value_in_internal_repr, distribution)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_cached_storage.py", line 171, in set_trial_param
+    self._backend.set_trial_param(trial_id, param_name, param_value_internal, distribution)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_rdb/storage.py", line 568, in set_trial_param
+    self._set_trial_param_without_commit(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_rdb/storage.py", line 603, in _set_trial_param_without_commit
+    trial_param.check_and_add(session)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_rdb/models.py", line 360, in check_and_add
+    self._check_compatibility_with_previous_trial_param_distributions(session)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/storages/_rdb/models.py", line 376, in _check_compatibility_with_previous_trial_param_distributions
+    distributions.check_distribution_compatibility(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/distributions.py", line 656, in check_distribution_compatibility
+    raise ValueError("Cannot set different distribution kind to the same parameter name.")
+ValueError: Cannot set different distribution kind to the same parameter name.

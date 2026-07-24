@@ -1,0 +1,7 @@
+/var/spool/slurmd/job2286379/slurm_script: line 13: conda: command not found
+CUDA Available
+Traceback (most recent call last):
+  File "/home/vk9342/USRP2024/pytorch/main_continue.py", line 188, in <module>
+    device, epochs, seed, batch_size, final_hidden_units)
+                                      ^^^^^^^^^^^^^^^^^^
+NameError: name 'final_hidden_units' is not defined

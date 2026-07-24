@@ -1,0 +1,10 @@
+/var/spool/slurmd/job2241741/slurm_script: line 13: conda: command not found
+CUDA Available
+Traceback (most recent call last):
+  File "/home/vk9342/USRP2024/pytorch/main.py", line 142, in <module>
+    objective = Objective(input_size, output_size, max_neurons_layers, 
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/USRP2024/pytorch/main.py", line 21, in __init__
+    os.makedirs(mother+'losses', exist_ok=1)
+                ^^^^^^
+NameError: name 'mother' is not defined

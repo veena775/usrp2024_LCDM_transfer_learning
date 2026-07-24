@@ -1,0 +1,31 @@
+[I 2026-02-15 22:10:25,893] A new study created in RDB with name: Pk_nwLH_params_transfer10_network2_100_nwLH_22000_BSQ_combined_revisions
+[W 2026-02-15 22:10:26,718] Trial 0 failed with parameters: {'lr': 0.0006214045050156982, 'wd': 0.014859065854643394, 'n_layers': 1, 'dropout_l': 0.29056775813917374, 'n_units_l0': 380} because of the following error: NameError("name 'data' is not defined").
+Traceback (most recent call last):
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/scratch/network/vk9342/USRP2024/pytorch/revisions/main_combined_22000_100.py", line 82, in __call__
+    train_loader = data.create_dataset('train', self.seed, f_Pk_train, f_Pk_norm,
+                  ^^^^
+NameError: name 'data' is not defined
+[W 2026-02-15 22:10:26,719] Trial 0 failed with value None.
+CUDA Available
+Traceback (most recent call last):
+  File "/scratch/network/vk9342/USRP2024/pytorch/revisions/main_combined_22000_100.py", line 259, in <module>
+    study.optimize(objective, n_trials, n_jobs=n_jobs)
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/study.py", line 451, in optimize
+    _optimize(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 62, in _optimize
+    _optimize_sequential(
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 159, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 247, in _run_trial
+    raise func_err
+  File "/home/vk9342/.conda/envs/usrp/lib/python3.11/site-packages/optuna/study/_optimize.py", line 196, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/scratch/network/vk9342/USRP2024/pytorch/revisions/main_combined_22000_100.py", line 82, in __call__
+    train_loader = data.create_dataset('train', self.seed, f_Pk_train, f_Pk_norm, 
+                   ^^^^
+NameError: name 'data' is not defined

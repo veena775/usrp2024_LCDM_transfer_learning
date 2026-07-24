@@ -1,0 +1,3 @@
+[I 2026-02-20 00:25:05,893] A new study created in RDB with name: MPk_nwLH_params_transfer10_network2_100_nwLH_2000_BSQ_combined_train_val_revisions
+CUDA Available
+[2026-02-20T00:25:20.172] error: *** JOB 2924366 ON adroit-h11g2 CANCELLED AT 2026-02-20T00:25:20 DUE to SIGNAL Terminated ***
